@@ -11,7 +11,7 @@
         <!--Swift-->
         <scene sceneID="zOg-dI-DgU">
             <objects>
-                <viewController id="rFr-ZI-NfY" sceneMemberID="viewController">
+                <viewController id="rFr-ZI-NfY" customClass="SwiftViewController" customModule="TestGitHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QOO-Xo-G9V">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
         <!--Repos-->
         <scene sceneID="9hH-JW-8W3">
             <objects>
-                <viewController id="tnj-TM-55v" sceneMemberID="viewController">
+                <viewController id="tnj-TM-55v" customClass="SearchViewController" customModule="TestGitHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d9u-V9-Q21">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

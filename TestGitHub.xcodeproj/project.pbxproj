@@ -8,20 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		037905A2258E8BB4007DF049 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905A1258E8BB4007DF049 /* AppDelegate.swift */; };
-		037905A6258E8BB4007DF049 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905A5258E8BB4007DF049 /* ViewController.swift */; };
+		037905A6258E8BB4007DF049 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905A5258E8BB4007DF049 /* SearchViewController.swift */; };
 		037905A9258E8BB4007DF049 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 037905A7258E8BB4007DF049 /* Main.storyboard */; };
 		037905AB258E8BB7007DF049 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 037905AA258E8BB7007DF049 /* Assets.xcassets */; };
 		037905AE258E8BB7007DF049 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 037905AC258E8BB7007DF049 /* LaunchScreen.storyboard */; };
+		037905C125920177007DF049 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905C025920177007DF049 /* SwiftViewController.swift */; };
+		037905C8259201CD007DF049 /* RepoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905C6259201CD007DF049 /* RepoTableCell.swift */; };
+		037905C9259201CD007DF049 /* RepoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037905C7259201CD007DF049 /* RepoTableCell.xib */; };
+		037905CE259204F5007DF049 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905CD259204F5007DF049 /* UIView+Constraints.swift */; };
+		037905D225920525007DF049 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037905D125920525007DF049 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0379059E258E8BB4007DF049 /* TestGitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestGitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		037905A1258E8BB4007DF049 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		037905A5258E8BB4007DF049 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		037905A5258E8BB4007DF049 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		037905A8258E8BB4007DF049 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		037905AA258E8BB7007DF049 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		037905AD258E8BB7007DF049 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		037905AF258E8BB7007DF049 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		037905C025920177007DF049 /* SwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftViewController.swift; sourceTree = "<group>"; };
+		037905C6259201CD007DF049 /* RepoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableCell.swift; sourceTree = "<group>"; };
+		037905C7259201CD007DF049 /* RepoTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoTableCell.xib; sourceTree = "<group>"; };
+		037905CD259204F5007DF049 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		037905D125920525007DF049 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				037905D225920525007DF049 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +51,7 @@
 			children = (
 				037905A0258E8BB4007DF049 /* TestGitHub */,
 				0379059F258E8BB4007DF049 /* Products */,
+				037905D025920525007DF049 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +94,7 @@
 		037905B92591FFBB007DF049 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				037905CC25920493007DF049 /* UI+Extensions */,
 				037905A1258E8BB4007DF049 /* AppDelegate.swift */,
 			);
 			path = Common;
@@ -90,7 +103,9 @@
 		037905BA2591FFC5007DF049 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				037905A5258E8BB4007DF049 /* ViewController.swift */,
+				037905C5259201A0007DF049 /* Cells */,
+				037905C425920190007DF049 /* Swift */,
+				037905C325920182007DF049 /* Search */,
 				037905AC258E8BB7007DF049 /* LaunchScreen.storyboard */,
 				037905A7258E8BB4007DF049 /* Main.storyboard */,
 			);
@@ -102,6 +117,47 @@
 			children = (
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		037905C325920182007DF049 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				037905A5258E8BB4007DF049 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		037905C425920190007DF049 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				037905C025920177007DF049 /* SwiftViewController.swift */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		037905C5259201A0007DF049 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				037905C6259201CD007DF049 /* RepoTableCell.swift */,
+				037905C7259201CD007DF049 /* RepoTableCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		037905CC25920493007DF049 /* UI+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				037905CD259204F5007DF049 /* UIView+Constraints.swift */,
+			);
+			path = "UI+Extensions";
+			sourceTree = "<group>";
+		};
+		037905D025920525007DF049 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				037905D125920525007DF049 /* UIKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				037905C9259201CD007DF049 /* RepoTableCell.xib in Resources */,
 				037905AE258E8BB7007DF049 /* LaunchScreen.storyboard in Resources */,
 				037905AB258E8BB7007DF049 /* Assets.xcassets in Resources */,
 				037905A9258E8BB4007DF049 /* Main.storyboard in Resources */,
@@ -174,7 +231,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				037905A6258E8BB4007DF049 /* ViewController.swift in Sources */,
+				037905C8259201CD007DF049 /* RepoTableCell.swift in Sources */,
+				037905C125920177007DF049 /* SwiftViewController.swift in Sources */,
+				037905CE259204F5007DF049 /* UIView+Constraints.swift in Sources */,
+				037905A6258E8BB4007DF049 /* SearchViewController.swift in Sources */,
 				037905A2258E8BB4007DF049 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,7 +312,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -307,7 +367,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -331,7 +391,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ovorona.TestGitHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -349,7 +409,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ovorona.TestGitHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
