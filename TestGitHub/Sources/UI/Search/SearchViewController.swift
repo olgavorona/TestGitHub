@@ -33,16 +33,17 @@ final class SearchViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor.white
-        tableView.register(RepoTableCell.self, forCellReuseIdentifier: String(describing: RepoTableCell.self))
+        tableView.register(UINib(nibName: String(describing: RepoTableCell.self), bundle: nil),
+                           forCellReuseIdentifier: String(describing: RepoTableCell.self))
         return tableView
     }()
-    
-    private lazy var searchService: SearchServiceProtocol = {
-        return SearchService()
-    }()
+
+    private var models: [RepoModel] = []
+    private var presenter: SearchViewOutput = SearchPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.view = self
         addSubviews()
     }
     
@@ -67,10 +68,14 @@ final class SearchViewController: UIViewController {
 
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return models.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RepoTableCell.self)) as? RepoTableCell {
+            cell.setup(with: models[indexPath.row])
+            return cell
+        }
         return UITableViewCell()
     }
     
@@ -78,9 +83,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchService.search(query: searchText, completion: { result in
-            
-        })
+        presenter.search(query: searchText)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -101,3 +104,10 @@ extension SearchViewController: UISearchBarDelegate {
     }
 }
 
+extension SearchViewController: SearchViewInput {
+    func update(with models: [RepoModel]) {
+        self.models = models
+        tableView.reloadData()
+    }
+
+}

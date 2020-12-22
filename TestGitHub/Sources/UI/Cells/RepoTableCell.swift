@@ -8,16 +8,16 @@
 import UIKit
 
 class RepoTableCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBOutlet weak var title: UILabel?
+    @IBOutlet weak var descriptionText: UILabel?
+    @IBOutlet weak var stars: UILabel?
+    @IBOutlet weak var creation: UILabel?
+    
+    func setup(with model: RepoModel) {
+        title?.text = model.name
+        descriptionText?.text = model.description
+        stars?.text = "\(model.stars)"
+        creation?.text = model.createDate
     }
     
 }

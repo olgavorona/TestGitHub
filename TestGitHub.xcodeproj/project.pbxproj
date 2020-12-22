@@ -25,6 +25,10 @@
 		037905ED25921435007DF049 /* SearchServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905EC25921435007DF049 /* SearchServiceProtocol.swift */; };
 		037905F325921611007DF049 /* AuthorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905F225921611007DF049 /* AuthorEntity.swift */; };
 		037905F925922C0F007DF049 /* URLComponents+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905F825922C0E007DF049 /* URLComponents+Extensions.swift */; };
+		037905FD25929523007DF049 /* RepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905FC25929523007DF049 /* RepoModel.swift */; };
+		0379060025929622007DF049 /* AuthorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905FF25929622007DF049 /* AuthorModel.swift */; };
+		0379060625929C34007DF049 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379060525929C33007DF049 /* SearchPresenter.swift */; };
+		0379060925929C46007DF049 /* SearchViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379060825929C46007DF049 /* SearchViewProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		037905EC25921435007DF049 /* SearchServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceProtocol.swift; sourceTree = "<group>"; };
 		037905F225921611007DF049 /* AuthorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorEntity.swift; sourceTree = "<group>"; };
 		037905F825922C0E007DF049 /* URLComponents+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+Extensions.swift"; sourceTree = "<group>"; };
+		037905FC25929523007DF049 /* RepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoModel.swift; sourceTree = "<group>"; };
+		037905FF25929622007DF049 /* AuthorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorModel.swift; sourceTree = "<group>"; };
+		0379060525929C33007DF049 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		0379060825929C46007DF049 /* SearchViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				037905A5258E8BB4007DF049 /* SearchViewController.swift */,
+				0379060525929C33007DF049 /* SearchPresenter.swift */,
+				0379060825929C46007DF049 /* SearchViewProtocols.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -157,6 +167,7 @@
 		037905C5259201A0007DF049 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				037905FB25929502007DF049 /* Models */,
 				037905C6259201CD007DF049 /* RepoTableCell.swift */,
 				037905C7259201CD007DF049 /* RepoTableCell.xib */,
 			);
@@ -222,6 +233,15 @@
 				037905F825922C0E007DF049 /* URLComponents+Extensions.swift */,
 			);
 			path = "Service+Extensions";
+			sourceTree = "<group>";
+		};
+		037905FB25929502007DF049 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				037905FC25929523007DF049 /* RepoModel.swift */,
+				037905FF25929622007DF049 /* AuthorModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +316,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				037905DF25921208007DF049 /* BasicService.swift in Sources */,
+				0379060025929622007DF049 /* AuthorModel.swift in Sources */,
+				037905FD25929523007DF049 /* RepoModel.swift in Sources */,
 				037905D8259210CB007DF049 /* TrendingService.swift in Sources */,
 				037905C8259201CD007DF049 /* RepoTableCell.swift in Sources */,
 				037905E42592121B007DF049 /* SearchEntity.swift in Sources */,
@@ -303,9 +325,11 @@
 				037905CE259204F5007DF049 /* UIView+Constraints.swift in Sources */,
 				037905DB259211AC007DF049 /* SearchService.swift in Sources */,
 				037905A6258E8BB4007DF049 /* SearchViewController.swift in Sources */,
+				0379060925929C46007DF049 /* SearchViewProtocols.swift in Sources */,
 				037905E82592122E007DF049 /* RecommendationEntity.swift in Sources */,
 				037905F925922C0F007DF049 /* URLComponents+Extensions.swift in Sources */,
 				037905F325921611007DF049 /* AuthorEntity.swift in Sources */,
+				0379060625929C34007DF049 /* SearchPresenter.swift in Sources */,
 				037905A2258E8BB4007DF049 /* AppDelegate.swift in Sources */,
 				037905ED25921435007DF049 /* SearchServiceProtocol.swift in Sources */,
 			);

@@ -12,14 +12,18 @@ struct SearchEntities: Codable {
 }
 
 struct SearchEntity: Codable {
-    let name: String?
-    let createdAt: String?
-    let owner: AuthorEntity?
+    let name: String
+    let createdAt: String
+    let owner: AuthorEntity
+    let stars: Int
+    let desc: String?
 }
 
 extension SearchEntity {
     enum CodingKeys: String, CodingKey {
         case createdAt = "created_at"
+        case stars = "stargazers_count"
+        case desc = "description"
         case name,owner
     }
 }
