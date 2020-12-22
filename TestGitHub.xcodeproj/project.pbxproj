@@ -17,6 +17,14 @@
 		037905C9259201CD007DF049 /* RepoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037905C7259201CD007DF049 /* RepoTableCell.xib */; };
 		037905CE259204F5007DF049 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905CD259204F5007DF049 /* UIView+Constraints.swift */; };
 		037905D225920525007DF049 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037905D125920525007DF049 /* UIKit.framework */; };
+		037905D8259210CB007DF049 /* TrendingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905D7259210CB007DF049 /* TrendingService.swift */; };
+		037905DB259211AC007DF049 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905DA259211AB007DF049 /* SearchService.swift */; };
+		037905DF25921208007DF049 /* BasicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905DE25921208007DF049 /* BasicService.swift */; };
+		037905E42592121B007DF049 /* SearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905E32592121B007DF049 /* SearchEntity.swift */; };
+		037905E82592122E007DF049 /* RecommendationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905E72592122E007DF049 /* RecommendationEntity.swift */; };
+		037905ED25921435007DF049 /* SearchServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905EC25921435007DF049 /* SearchServiceProtocol.swift */; };
+		037905F325921611007DF049 /* AuthorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905F225921611007DF049 /* AuthorEntity.swift */; };
+		037905F925922C0F007DF049 /* URLComponents+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905F825922C0E007DF049 /* URLComponents+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +40,14 @@
 		037905C7259201CD007DF049 /* RepoTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoTableCell.xib; sourceTree = "<group>"; };
 		037905CD259204F5007DF049 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		037905D125920525007DF049 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		037905D7259210CB007DF049 /* TrendingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingService.swift; sourceTree = "<group>"; };
+		037905DA259211AB007DF049 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		037905DE25921208007DF049 /* BasicService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicService.swift; sourceTree = "<group>"; };
+		037905E32592121B007DF049 /* SearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEntity.swift; sourceTree = "<group>"; };
+		037905E72592122E007DF049 /* RecommendationEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationEntity.swift; sourceTree = "<group>"; };
+		037905EC25921435007DF049 /* SearchServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceProtocol.swift; sourceTree = "<group>"; };
+		037905F225921611007DF049 /* AuthorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorEntity.swift; sourceTree = "<group>"; };
+		037905F825922C0E007DF049 /* URLComponents+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +110,7 @@
 		037905B92591FFBB007DF049 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				037905F725922BE1007DF049 /* Service+Extensions */,
 				037905CC25920493007DF049 /* UI+Extensions */,
 				037905A1258E8BB4007DF049 /* AppDelegate.swift */,
 			);
@@ -115,6 +132,8 @@
 		037905BB2591FFCD007DF049 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				037905E22592120C007DF049 /* Entity */,
+				037905DD259211F2007DF049 /* API */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -158,6 +177,51 @@
 				037905D125920525007DF049 /* UIKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		037905DD259211F2007DF049 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				037905EB25921424007DF049 /* Protocols */,
+				037905EA25921416007DF049 /* Service */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		037905E22592120C007DF049 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				037905E32592121B007DF049 /* SearchEntity.swift */,
+				037905F225921611007DF049 /* AuthorEntity.swift */,
+				037905E72592122E007DF049 /* RecommendationEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		037905EA25921416007DF049 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				037905DE25921208007DF049 /* BasicService.swift */,
+				037905D7259210CB007DF049 /* TrendingService.swift */,
+				037905DA259211AB007DF049 /* SearchService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		037905EB25921424007DF049 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				037905EC25921435007DF049 /* SearchServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		037905F725922BE1007DF049 /* Service+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				037905F825922C0E007DF049 /* URLComponents+Extensions.swift */,
+			);
+			path = "Service+Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,11 +295,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				037905DF25921208007DF049 /* BasicService.swift in Sources */,
+				037905D8259210CB007DF049 /* TrendingService.swift in Sources */,
 				037905C8259201CD007DF049 /* RepoTableCell.swift in Sources */,
+				037905E42592121B007DF049 /* SearchEntity.swift in Sources */,
 				037905C125920177007DF049 /* SwiftViewController.swift in Sources */,
 				037905CE259204F5007DF049 /* UIView+Constraints.swift in Sources */,
+				037905DB259211AC007DF049 /* SearchService.swift in Sources */,
 				037905A6258E8BB4007DF049 /* SearchViewController.swift in Sources */,
+				037905E82592122E007DF049 /* RecommendationEntity.swift in Sources */,
+				037905F925922C0F007DF049 /* URLComponents+Extensions.swift in Sources */,
+				037905F325921611007DF049 /* AuthorEntity.swift in Sources */,
 				037905A2258E8BB4007DF049 /* AppDelegate.swift in Sources */,
+				037905ED25921435007DF049 /* SearchServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -37,6 +37,10 @@ final class SearchViewController: UIViewController {
         return tableView
     }()
     
+    private lazy var searchService: SearchServiceProtocol = {
+        return SearchService()
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
@@ -74,7 +78,9 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        presenter?.search(text: searchText)
+        searchService.search(query: searchText, completion: { result in
+            
+        })
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
