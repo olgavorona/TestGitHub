@@ -10,8 +10,8 @@ import Foundation
 struct RepoModel {
     let name: String
     let description: String?
-    let stars: Int
-    let author: AuthorModel?
+    let stars: String
+    let author: String
     let createDate: String?
 }
 

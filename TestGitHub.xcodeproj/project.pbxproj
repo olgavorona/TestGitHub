@@ -26,9 +26,9 @@
 		037905F325921611007DF049 /* AuthorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905F225921611007DF049 /* AuthorEntity.swift */; };
 		037905F925922C0F007DF049 /* URLComponents+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905F825922C0E007DF049 /* URLComponents+Extensions.swift */; };
 		037905FD25929523007DF049 /* RepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905FC25929523007DF049 /* RepoModel.swift */; };
-		0379060025929622007DF049 /* AuthorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037905FF25929622007DF049 /* AuthorModel.swift */; };
 		0379060625929C34007DF049 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379060525929C33007DF049 /* SearchPresenter.swift */; };
 		0379060925929C46007DF049 /* SearchViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379060825929C46007DF049 /* SearchViewProtocols.swift */; };
+		037906152593C23D007DF049 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037906142593C23C007DF049 /* DateFormat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,9 +53,9 @@
 		037905F225921611007DF049 /* AuthorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorEntity.swift; sourceTree = "<group>"; };
 		037905F825922C0E007DF049 /* URLComponents+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+Extensions.swift"; sourceTree = "<group>"; };
 		037905FC25929523007DF049 /* RepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoModel.swift; sourceTree = "<group>"; };
-		037905FF25929622007DF049 /* AuthorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorModel.swift; sourceTree = "<group>"; };
 		0379060525929C33007DF049 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		0379060825929C46007DF049 /* SearchViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewProtocols.swift; sourceTree = "<group>"; };
+		037906142593C23C007DF049 /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +121,7 @@
 				037905F725922BE1007DF049 /* Service+Extensions */,
 				037905CC25920493007DF049 /* UI+Extensions */,
 				037905A1258E8BB4007DF049 /* AppDelegate.swift */,
+				037906142593C23C007DF049 /* DateFormat.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -239,7 +240,6 @@
 			isa = PBXGroup;
 			children = (
 				037905FC25929523007DF049 /* RepoModel.swift */,
-				037905FF25929622007DF049 /* AuthorModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -316,13 +316,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				037905DF25921208007DF049 /* BasicService.swift in Sources */,
-				0379060025929622007DF049 /* AuthorModel.swift in Sources */,
 				037905FD25929523007DF049 /* RepoModel.swift in Sources */,
 				037905D8259210CB007DF049 /* TrendingService.swift in Sources */,
 				037905C8259201CD007DF049 /* RepoTableCell.swift in Sources */,
 				037905E42592121B007DF049 /* SearchEntity.swift in Sources */,
 				037905C125920177007DF049 /* SwiftViewController.swift in Sources */,
 				037905CE259204F5007DF049 /* UIView+Constraints.swift in Sources */,
+				037906152593C23D007DF049 /* DateFormat.swift in Sources */,
 				037905DB259211AC007DF049 /* SearchService.swift in Sources */,
 				037905A6258E8BB4007DF049 /* SearchViewController.swift in Sources */,
 				0379060925929C46007DF049 /* SearchViewProtocols.swift in Sources */,

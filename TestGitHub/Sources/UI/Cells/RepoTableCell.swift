@@ -14,9 +14,9 @@ class RepoTableCell: UITableViewCell {
     @IBOutlet weak var creation: UILabel?
     
     func setup(with model: RepoModel) {
-        title?.text = model.name
+        title?.text = "\(model.author) \\ \(model.name)"
         descriptionText?.text = model.description
-        stars?.text = "\(model.stars)"
+        stars?.text = model.stars
         creation?.text = model.createDate
     }
     
