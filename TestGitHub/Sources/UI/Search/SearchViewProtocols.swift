@@ -9,7 +9,6 @@ import Foundation
 
 protocol SearchViewInput: class {
     func update(with models: [RepoModel])
-    func showLoading()
     func showError()
 }
 

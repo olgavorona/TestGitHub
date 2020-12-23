@@ -83,6 +83,7 @@ final class SearchViewController: UIViewController {
     
     @objc func search(_ searchBar: UISearchBar) {
         if searchBar.text?.isEmpty == false {
+            HUD.show(.progress)
             presenter.search(query: searchBar.text!)
         } else {
             update(with: [])
@@ -147,9 +148,5 @@ extension SearchViewController: SearchViewInput {
     func showError() {
         HUD.show(.labeledError(title: "Loading error", subtitle: nil))
         HUD.hide(afterDelay: 3.0)
-    }
-    
-    func showLoading() {
-        HUD.show(.progress)
     }
 }
