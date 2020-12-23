@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wHg-RJ-Euz">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -34,7 +35,7 @@
                         <viewLayoutGuide key="safeArea" id="Pxg-gH-JA7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Repos" image="gitLogo" id="pH5-Fi-I4s"/>
+                    <tabBarItem key="tabBarItem" title="Repos" image="gitBar" id="pH5-Fi-I4s"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yk6-Pb-lpv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,8 +61,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gitLogo" width="40" height="40"/>
-        <image name="swift" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="gitBar" width="25" height="25"/>
+        <image name="swift" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
