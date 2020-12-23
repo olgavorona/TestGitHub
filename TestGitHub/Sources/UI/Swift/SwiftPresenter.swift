@@ -21,7 +21,8 @@ final class SwiftPresenter {
         return RepoModel(title: entity.repo,
                           description: entity.desc,
                           stars: entity.stars,
-                          createDate:"")
+                          createDate:"",
+                          repoURL: entity.url)
     }
 }
 

@@ -12,5 +12,6 @@ struct RepoModel {
     let description: String?
     let stars: String
     let createDate: String?
+    let repoURL: String
 }
 

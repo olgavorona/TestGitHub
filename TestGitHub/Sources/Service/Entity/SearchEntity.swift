@@ -17,6 +17,7 @@ struct SearchEntity: Codable {
     let owner: AuthorEntity
     let stars: Int
     let desc: String?
+    let url: String
 }
 
 extension SearchEntity {
@@ -24,6 +25,7 @@ extension SearchEntity {
         case createdAt = "created_at"
         case stars = "stargazers_count"
         case desc = "description"
-        case name,owner
+        case url = "html_url"
+        case name, owner
     }
 }

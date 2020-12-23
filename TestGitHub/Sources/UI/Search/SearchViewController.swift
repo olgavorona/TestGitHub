@@ -7,6 +7,7 @@
 
 import UIKit
 import PKHUD
+import SafariServices
 
 final class SearchViewController: UIViewController {
 
@@ -100,6 +101,12 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let url = URL(string: models[indexPath.row].repoURL) else { return }
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true)
     }
     
 }

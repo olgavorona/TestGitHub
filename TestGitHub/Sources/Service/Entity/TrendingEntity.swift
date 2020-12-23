@@ -16,11 +16,13 @@ struct TrendingEntity: Codable {
     let stars: String
     let currentPeriodStars: String
     let desc: String
+    let url: String
 }
 
 extension TrendingEntity {
     enum CodingKeys: String, CodingKey {
         case currentPeriodStars = "added_stars"
+        case url = "repo_link"
         case repo,stars,desc
     }
 }

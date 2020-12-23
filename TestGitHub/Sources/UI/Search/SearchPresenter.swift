@@ -25,7 +25,8 @@ final class SearchPresenter {
         return RepoModel(title: "\(entity.owner.login ?? "") \\ \(entity.name)",
                          description: entity.desc,
                          stars: "\(entity.stars)",
-                         createDate: dateString != nil ? "Created: \(dateString!)" : "")
+                         createDate: dateString != nil ? "Created: \(dateString!)" : "",
+                         repoURL: entity.url)
     }
 }
 

@@ -7,6 +7,7 @@
 
 import UIKit
 import PKHUD
+import SafariServices
 
 class SwiftViewController: UIViewController {
 
@@ -94,6 +95,11 @@ extension SwiftViewController: UITableViewDataSource, UITableViewDelegate {
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let url = URL(string: models[indexPath.row].repoURL) else { return }
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true)
+    }
 }
 
 extension SwiftViewController: SwiftViewInput {
