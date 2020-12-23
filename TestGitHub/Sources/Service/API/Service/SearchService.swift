@@ -7,13 +7,6 @@
 
 import Foundation
 
-enum SearchServiceError: Error {
-    case missingSettings
-    case buildingRequest
-    case request(Error?)
-    case decoding(Error)
-}
-
 final class SearchService: BasicService, SearchServiceProtocol {
     
     private enum QueryItemName: String {
@@ -23,7 +16,7 @@ final class SearchService: BasicService, SearchServiceProtocol {
         var components = URLComponents(string: ServiceURL.search.rawValue)
         components?.add(queryItem: URLQueryItem(name: QueryItemName.query.rawValue, value: query))
         guard let url = components?.url else {
-            completion(.failure(SearchServiceError.buildingRequest))
+            completion(.failure(ServiceError.buildingRequest))
             return
         }
 
@@ -38,7 +31,7 @@ final class SearchService: BasicService, SearchServiceProtocol {
                   let response = response as? HTTPURLResponse,
                   (200 ..< 300) ~= response.statusCode,
                   error == nil else {
-                result = .failure(SearchServiceError.request(error))
+                result = .failure(ServiceError.request(error))
                 return
             }
 
@@ -46,7 +39,7 @@ final class SearchService: BasicService, SearchServiceProtocol {
                 let responseObject = try JSONDecoder().decode(SearchEntities.self, from: data)
                 result = .success(responseObject)
             } catch {
-                result = .failure(SearchServiceError.decoding(error))
+                result = .failure(ServiceError.decoding(error))
             }
         }.resume()
     }

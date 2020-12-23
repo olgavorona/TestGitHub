@@ -8,10 +8,9 @@
 import Foundation
 
 struct RepoModel {
-    let name: String
+    let title: String
     let description: String?
     let stars: String
-    let author: String
     let createDate: String?
 }
 

@@ -10,7 +10,7 @@ import Foundation
 extension URLComponents {
     
     mutating
-    func add(queryItem: URLQueryItem, replaceExisting: Bool = true) {
+    func add(queryItem: URLQueryItem, replaceExisting: Bool = false) {
         guard let items = queryItems else {
             queryItems = [queryItem]
             return

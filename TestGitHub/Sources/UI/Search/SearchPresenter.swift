@@ -22,11 +22,10 @@ final class SearchPresenter {
             dateString = CachedDateFormatter.formatDate(date, with: .standard)
             
         }
-        return RepoModel(name: entity.name,
-                          description: entity.desc,
-                          stars: "\(entity.stars)",
-                          author: entity.owner.login ?? "",
-                          createDate: dateString != nil ? "Created: \(dateString!)" : "")
+        return RepoModel(title: "\(entity.owner.login ?? "") \\ \(entity.name)",
+                         description: entity.desc,
+                         stars: "\(entity.stars)",
+                         createDate: dateString != nil ? "Created: \(dateString!)" : "")
     }
 }
 
