@@ -17,7 +17,7 @@ final class SearchViewController: UIViewController {
         searchBar.searchBarStyle = .minimal
         searchBar.barTintColor = UIColor.black
         searchBar.tintColor = UIColor.black
-        searchBar.placeholder = "Search"
+        searchBar.placeholder = "Search for repos..."
         searchBar.sizeToFit()
         searchBar.layoutIfNeeded()
         searchBar.delegate = self
@@ -34,11 +34,21 @@ final class SearchViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor.white
+        tableView.keyboardDismissMode = .onDrag
         tableView.register(UINib(nibName: String(describing: RepoTableCell.self), bundle: nil),
                            forCellReuseIdentifier: String(describing: RepoTableCell.self))
         return tableView
     }()
 
+    private lazy var emptyLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Nothing here yet\n Search for interesting repos"
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        return label
+    }()
+    
     private var models: [RepoModel] = []
     private var presenter: SearchViewOutput = SearchPresenter()
     
@@ -51,6 +61,8 @@ final class SearchViewController: UIViewController {
     private func addSubviews() {
         view.addSubview(searchBar)
         view.addSubview(tableView)
+        view.addSubview(emptyLabel)
+
         UIView.activate(constraints: [
             
             searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -61,10 +73,20 @@ final class SearchViewController: UIViewController {
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 10)
+            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 10),
+            
+            emptyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            emptyLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ].compactMap { $0 })
     }
     
+    @objc func search(_ searchBar: UISearchBar) {
+        if searchBar.text?.isEmpty == false {
+            presenter.search(query: searchBar.text!)
+        } else {
+            update(with: [])
+        }
+    }
 }
 
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
@@ -84,7 +106,9 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        presenter.search(query: searchText)
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.search(_:)), object: searchBar)
+        perform(#selector(self.search(_:)), with: searchBar, afterDelay: 0.75)
+        
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -107,6 +131,7 @@ extension SearchViewController: UISearchBarDelegate {
 
 extension SearchViewController: SearchViewInput {
     func update(with models: [RepoModel]) {
+        emptyLabel.isHidden = models.count != 0
         self.models = models
         tableView.reloadData()
         HUD.hide()
