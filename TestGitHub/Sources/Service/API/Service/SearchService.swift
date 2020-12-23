@@ -11,10 +11,13 @@ final class SearchService: BasicService, SearchServiceProtocol {
     
     private enum QueryItemName: String {
         case query = "q"
+        case count = "per_page"
     }
     func search(query: String, completion: @escaping (Result<SearchEntities,Error>) -> Void) {
         var components = URLComponents(string: ServiceURL.search.rawValue)
         components?.add(queryItem: URLQueryItem(name: QueryItemName.query.rawValue, value: query))
+        components?.add(queryItem: URLQueryItem(name: QueryItemName.count.rawValue, value: "100"))
+
         guard let url = components?.url else {
             completion(.failure(ServiceError.buildingRequest))
             return
