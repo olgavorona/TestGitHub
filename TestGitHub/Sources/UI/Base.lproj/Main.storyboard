@@ -12,13 +12,14 @@
         <!--Swift-->
         <scene sceneID="zOg-dI-DgU">
             <objects>
-                <viewController id="rFr-ZI-NfY" customClass="SwiftViewController" customModule="TestGitHub" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="rFr-ZI-NfY" customClass="SwiftViewController" customModule="TestGitHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QOO-Xo-G9V">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="ZN0-oB-Nl5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Swift" image="swift" id="bTq-hf-xjP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="smA-kN-LMl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -28,7 +29,7 @@
         <!--Repos-->
         <scene sceneID="9hH-JW-8W3">
             <objects>
-                <viewController id="tnj-TM-55v" customClass="SearchViewController" customModule="TestGitHub" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="tnj-TM-55v" customClass="SearchViewController" customModule="TestGitHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d9u-V9-Q21">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,7 +45,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="HCf-6U-vTZ">
             <objects>
-                <tabBarController id="wHg-RJ-Euz" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="wHg-RJ-Euz" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gk1-dy-kGd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

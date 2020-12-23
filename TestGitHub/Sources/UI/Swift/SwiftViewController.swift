@@ -12,7 +12,7 @@ import SafariServices
 class SwiftViewController: UIViewController {
 
     private lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .grouped)
+        let tableView = UITableView(frame: .zero, style: .plain)
         tableView.sectionHeaderHeight = 0
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.estimatedRowHeight = UITableView.automaticDimension
