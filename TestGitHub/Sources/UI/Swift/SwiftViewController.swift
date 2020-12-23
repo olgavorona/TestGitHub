@@ -24,6 +24,13 @@ class SwiftViewController: UIViewController {
         return tableView
     }()
     
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Swift Trending"
+        label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        return label
+    }()
+    
     private lazy var segmentControl: UISegmentedControl = {
         let items = ["Day", "Week", "Month"]
         let control = UISegmentedControl(items: items)
@@ -39,13 +46,20 @@ class SwiftViewController: UIViewController {
         super.viewDidLoad()
         addSubviews()
         presenter.view = self
+        presenter.getItems(index: 0)
     }
     
     private func addSubviews() {
         view.addSubview(tableView)
         view.addSubview(segmentControl)
+        view.addSubview(titleLabel)
+        
         UIView.activate(constraints: [
-            segmentControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            titleLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 8),
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+
+            segmentControl.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
             segmentControl.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 8),
             segmentControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             segmentControl.heightAnchor.constraint(equalToConstant: 44),
