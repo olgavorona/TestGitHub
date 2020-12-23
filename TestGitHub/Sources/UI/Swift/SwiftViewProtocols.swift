@@ -9,6 +9,7 @@ import Foundation
 
 protocol SwiftViewInput: class {
     func update(with models: [RepoModel])
+    func showError()
 }
 
 protocol SwiftViewOutput {

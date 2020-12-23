@@ -39,7 +39,7 @@ extension SearchPresenter: SearchViewOutput {
                 let models = entity.items.map { self.model(from: $0)}
                 self.view?.update(with: models)
             case .failure:
-                break;
+                self.view?.showError()
             }
         })
     }

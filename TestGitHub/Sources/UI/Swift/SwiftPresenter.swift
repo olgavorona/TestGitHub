@@ -35,6 +35,7 @@ extension SwiftPresenter: SwiftViewOutput {
                 let models = items.map { self.model(from: $0)}
                 self.view?.update(with: models)
             case .failure:
+                self.view?.showError()
                 break;
             }
         })

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PKHUD
 
 final class SearchViewController: UIViewController {
 
@@ -24,7 +25,7 @@ final class SearchViewController: UIViewController {
     }()
     
     private lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .grouped)
+        let tableView = UITableView(frame: .zero, style: .plain)
         tableView.sectionHeaderHeight = 0
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.estimatedRowHeight = UITableView.automaticDimension
@@ -108,6 +109,15 @@ extension SearchViewController: SearchViewInput {
     func update(with models: [RepoModel]) {
         self.models = models
         tableView.reloadData()
+        HUD.hide()
     }
 
+    func showError() {
+        HUD.show(.labeledError(title: "Loading error", subtitle: nil))
+        HUD.hide(afterDelay: 3.0)
+    }
+    
+    func showLoading() {
+        HUD.show(.progress)
+    }
 }

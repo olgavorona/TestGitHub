@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class SwiftViewController: UIViewController {
 
@@ -46,6 +47,8 @@ class SwiftViewController: UIViewController {
         super.viewDidLoad()
         addSubviews()
         presenter.view = self
+        
+        HUD.show(.progress)
         presenter.getItems(index: 0)
     }
     
@@ -72,6 +75,7 @@ class SwiftViewController: UIViewController {
     }
     
     @objc func changeItem(sender: UISegmentedControl) {
+        HUD.show(.progress)
         presenter.getItems(index: sender.selectedSegmentIndex)
     }
 
@@ -94,8 +98,13 @@ extension SwiftViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension SwiftViewController: SwiftViewInput {
     func update(with models: [RepoModel]) {
+        HUD.hide()
         self.models = models
         tableView.reloadData()
     }
-
+    
+    func showError() {
+        HUD.show(.labeledError(title: "Loading error", subtitle: nil))
+        HUD.hide(afterDelay: 3.0)
+    }
 }
