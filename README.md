@@ -33,13 +33,13 @@ Supported devices:
 
 👨‍💻 Project structure
  --------------------------
-All source code is in the Sources.
+ All source code is in the Sources.
 
-Service folder is for Networking.  Networking is build with URLSession.
+ The service folder is for Networking. Networking is built with URLSession.
 
-UI folder is for screens. UI is build with Autolayout. UI Modules contains only View Controller, Presenter, and Protocols for their communication
+ UI folder is for screens. UI is built with Autolayout. UI Modules contains only View Controller, Presenter, and Protocols for their communication
 
-Common Folder contains helpers.
+ Common Folder contains helpers.
 
 
 📱 Demo
